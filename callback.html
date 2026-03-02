@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>QuickBooks Connected — BBIG</title>
+<style>body{font-family:Arial,sans-serif;max-width:700px;margin:80px auto;padding:0 20px;color:#333;line-height:1.6}
+.box{background:#f4f4f4;border:1px solid #ddd;border-radius:6px;padding:16px;word-break:break-all;font-family:monospace;font-size:13px}
+h1{color:#2c7a2c}.label{font-weight:bold;margin-top:16px}</style>
+</head>
+<body>
+<h1>✅ QuickBooks Authorization</h1>
+<p>Copy the values below and send them to Alex.</p>
+<div class="label">Code:</div>
+<div class="box" id="code">Loading...</div>
+<div class="label">RealmId (Company ID):</div>
+<div class="box" id="realmId">Loading...</div>
+<div class="label">Full URL (backup):</div>
+<div class="box" id="fullUrl">Loading...</div>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  document.getElementById('code').textContent = params.get('code') || 'Not found';
+  document.getElementById('realmId').textContent = params.get('realmId') || 'Not found';
+  document.getElementById('fullUrl').textContent = window.location.href;
+</script>
+</body>
+</html>
